@@ -9,6 +9,13 @@ import connectDB from './server/config/db.js';
 import userRoutes from './server/routes/userRoutes.js';
 import taskRoutes from './server/routes/taskRoutes.js';
 
+// import path from "path";
+
+// app.use(express.static("public"));
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.resolve("public/dashboard.html"));
+// });
 // --- Setup __dirname for ES modules ---
 // (ES modules don't have __dirname by default)
 const __filename = fileURLToPath(import.meta.url);
@@ -61,7 +68,12 @@ app.use((err, req, res, next) => {
 
 // --- Start Server ---
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📊 Dashboard: http://localhost:${PORT}/dashboard`);
-});
+
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`📊 Dashboard: http://localhost:${PORT}/dashboard`);
+  });
+}
+
+export default app;
