@@ -1,8 +1,8 @@
 {
-  "name": "tempo-app",
+  "name": "tempo",
   "version": "1.0.0",
   "description": "A full-stack productivity tracking application built with Node.js, Express, MongoDB, and vanilla JS.",
-  "main": "auth.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
