@@ -78,7 +78,7 @@ npm run dev
 
 ### 4. Open in browser
 ```
-http://localhost:5000
+https://tempo-app-nine.vercel.app/
 ```
 
 ---
